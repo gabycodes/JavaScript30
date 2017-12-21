@@ -107,6 +107,18 @@
     //             .filter(streetName => streetName.includes('de')); // Only return the items if they include 'de'
 
 
+    // 7. sort Exercise
+    // Sort the people alphabetically by last name
+    const alpha = people.sort((lastOne, nextOne) => {
+      // Right now, "lastOne" is the full name ('Glen, Beck')
+
+      // Here we're splitting "lastOne" and making two items out of it. By splitting at the ", ", it takes the first part and calls it "last", and take the second part and calls it "first"(the names we gave it)
+      const [aLast, aFirst] = lastOne.split(', ');
+      const [bLast, bFirst] = nextOne.split(', ');
+      return aLast > bLast ? 1 : -1;
+    });
+    console.log(alpha);
+
     
 
   </script>
