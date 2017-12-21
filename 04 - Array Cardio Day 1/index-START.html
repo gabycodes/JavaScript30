@@ -119,7 +119,20 @@
     });
     console.log(alpha);
 
-    
+    // 8. Reduce Exercise
+    // Sum up the instances of each of these
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+    const transportation = data.reduce(function(obj, item) {
+      if (!obj[item]) { // If there are no instances of the things in the object,
+        obj[item] = 0; // Set the total to 0
+        // This starts the total for all of the things inside the object to 0 to start with, wether or not more will follow later
+      }
+      obj[item]++; // If we had "walk: 0" in our object, it would increment it to one
+      return obj;
+    }, {}); // This empty obejct starts empty and waits to be filled
+
+    console.log(transportation);
 
   </script>
 </body>
